@@ -8,4 +8,5 @@ node("worker1"){
             packer version
         """
     }
+    // new stage test
 }
