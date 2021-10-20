@@ -33,6 +33,7 @@ node("worker2"){
         sh '''
            ./hello.sh
            ls
+           ls
         '''
     }
 }
