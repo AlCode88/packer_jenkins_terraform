@@ -32,6 +32,7 @@ node("worker2"){
     stage('execute hello.sh command'){
         sh '''
            ./hello.sh
+           ls
         '''
     }
 }
