@@ -3,10 +3,9 @@ node("worker1"){
         deleteDir()
         sh 'ls -al'
     }
-    stage('Check the packer version'){
+    stage('Remove Packer on CentOS'){
         sh """
-            packer version
+            rm -rf /usr/bin/packer
         """
     }
-    // new stage test
 }
