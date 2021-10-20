@@ -3,5 +3,5 @@ node("worker1){
         sh """
             packer version
         """
-    }   
+    }
 }
