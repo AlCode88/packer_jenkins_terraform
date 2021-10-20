@@ -3,5 +3,5 @@ node("worker1"){
         sh """
            yum install -y yum-utils
         """
-    }
+     }
 }
