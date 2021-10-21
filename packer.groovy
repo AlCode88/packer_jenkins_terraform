@@ -5,4 +5,10 @@ node('worker1'){
             git pull -u origin main
         '''
     }
+    stage('List all the files'){
+        sh '''
+            ls
+            git pull -u origin main
+        '''
+    }
 }
