@@ -8,3 +8,4 @@ crash.log
 *.box
 
 *DS.Store*
+*.json
