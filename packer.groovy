@@ -1,7 +1,7 @@
 node('worker1'){
     stage('Install Apache'){
         sh '''
-            sh 'ls'
+            ls
             git pull -u origin main
         '''
     }
