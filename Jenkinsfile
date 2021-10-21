@@ -16,16 +16,16 @@ node("worker1"){
     //       ls
     //    """
     //}
+    //stage('Remove packer zip file'){
+    //    sh """
+    //       rm -rf packer*.zip.*
+    //       ls
+    //    """
+    //}
     stage('Remove packer zip file'){
         sh """
-           rm -rf packer*.zip.*
            ls
-        """
-    }
-    stage('Remove packer zip file'){
-        sh """
-           mv packer /usr/bin/
-           ls
+           rm -rf packer*.zip.
         """
     }
     stage('Check packer version'){
