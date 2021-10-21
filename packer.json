@@ -13,15 +13,13 @@
         "instance_type": "t2.micro",
         "source_ami_filter": {
             "filters": {
-              "virtualization-type": "hvm",
-              "name": "ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*b",
-              "root-device-type": "ebs"
+                "virtualization-type": "hvm",
+                "name": "ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*",
+                "root-device-type": "ebs"
             },
-            "owners": [
-              "799700054245"
-            ],
+            "owners": ["799700054245"],
             "most_recent": true
-          },
+        },
         "ssh_username": "ubuntu",
         "type": "amazon-ebs",
         "tags": {
