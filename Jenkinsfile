@@ -4,22 +4,28 @@ node("worker1"){
            yum install -y yum-utils
         """
     }
-    stage('Install packer'){
+    stage('Download Packer'){
         sh """
            wget https://releases.hashicorp.com/packer/1.7.7/packer_1.7.7_linux_amd64.zip
            ls
         """
-     }
-    stage('Install packer'){
+    }
+    stage('Unzip Packer'){
         sh """
            unzip packer_1.7.7_linux_amd64.zip
            ls
         """
-     }
-     stage('Install packer'){
+    }
+    stage('Remove packer zip file'){
         sh """
-           rm -rf packer*.zip
+           rm -rf packer*.zip.*
            ls
         """
-     }
+    }
+    stage('Remove packer zip file'){
+        sh """
+           mv packer /usr/bin/
+           ls
+        """
+    }
 }
