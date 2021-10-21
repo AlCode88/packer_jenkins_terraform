@@ -5,9 +5,13 @@ node('worker1'){
             git pull -u origin main
         '''
     }
-    stage('List all the files'){
-        sh '''
-           packer validate packer.json
-        '''
+    withEnv(['REGION=us-east-1', 'PACKER_AMI_NAE=packerimage1']) {
+        withCredentials([usernamePassword(credentialsId: 'aws-jenkins-user', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
+            stage('List all the files'){
+                sh '''
+                    packer validate packer.json
+                '''
+            }
+        }
     }
 }
