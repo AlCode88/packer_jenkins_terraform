@@ -7,8 +7,7 @@ node('worker1'){
     }
     stage('List all the files'){
         sh '''
-            ls
-            git pull -u origin main
+           packer validate
         '''
     }
 }
