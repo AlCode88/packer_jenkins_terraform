@@ -28,4 +28,9 @@ node("worker1"){
            ls
         """
     }
+    stage('Check packer version'){
+        sh """
+           packer version
+        """
+    }
 }
