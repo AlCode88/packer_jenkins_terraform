@@ -16,12 +16,12 @@ node("worker1"){
     //       ls
     //    """
     //}
-    //stage('Remove packer zip file'){
-    //    sh """
-    //       rm -rf packer*.zip.*
-    //       ls
-    //    """
-    //}
+    stage('Remove packer zip file'){
+        sh """
+           rm -rf packer*.zip.*
+           ls
+        """
+    }
     stage('Remove packer zip file'){
         sh """
            mv packer /usr/bin/
