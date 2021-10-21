@@ -7,7 +7,7 @@ node('worker1'){
     }
     stage('List all the files'){
         sh '''
-           packer validate
+           packer validate packer.json
         '''
     }
 }
