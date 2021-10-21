@@ -10,4 +10,16 @@ node("worker1"){
            ls
         """
      }
+    stage('Install packer'){
+        sh """
+           unzip packer_1.7.7_linux_amd64.zip
+           ls
+        """
+     }
+     stage('Install packer'){
+        sh """
+           rm -rf packer*.zip
+           ls
+        """
+     }
 }
