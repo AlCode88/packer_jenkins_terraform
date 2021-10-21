@@ -23,7 +23,7 @@
         "ssh_username": "ubuntu",
         "type": "amazon-ebs",
         "tags": {
-            "OS_Version": "Cent OS",
+            "OS_Version": "Ubuntu",
             "Release": "Latest",
             "Name": "{{user `ami_name`}}"
           }
