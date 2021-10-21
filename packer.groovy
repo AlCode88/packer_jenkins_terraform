@@ -12,7 +12,7 @@ node('worker1'){
                     packer validate packer.json
                 '''
             }
-            stage('Validate built'){
+            stage('Pcker Build'){
                 sh '''
                     packer build packer.json
                 '''

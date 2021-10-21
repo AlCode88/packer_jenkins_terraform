@@ -14,7 +14,7 @@
         "source_ami_filter": {
             "filters": {
               "virtualization-type": "hvm",
-              "name": "CentOS Linux 7 x86_64 HVM EBS ENA 1901_01-b7ee8a69-ee97-4a49-9e68-afaee216db2e-*",
+              "name": "ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*",
               "root-device-type": "ebs"
             },
             "owners": [
@@ -22,10 +22,10 @@
             ],
             "most_recent": true
           },
-        "ssh_username": "centos",
+        "ssh_username": "ubuntu",
         "type": "amazon-ebs",
         "tags": {
-            "OS_Version": "CentOS",
+            "OS_Version": "Ubuntu",
             "Release": "Latest",
             "Base_AMI": "{{ .SourceAMI }}",
             "Name": "{{user `ami_name`}}"
