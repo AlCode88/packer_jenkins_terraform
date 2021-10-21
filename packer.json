@@ -14,7 +14,7 @@
         "source_ami_filter": {
             "filters": {
               "virtualization-type": "hvm",
-              "name": "ami-0affd4508a5d2481b",
+              "name": "ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*b",
               "root-device-type": "ebs"
             },
             "owners": [
@@ -22,16 +22,15 @@
             ],
             "most_recent": true
           },
-        "ssh_username": "centos",
+        "ssh_username": "ubuntu",
         "type": "amazon-ebs",
         "tags": {
             "OS_Version": "Cent OS",
             "Release": "Latest",
-            "Base_AMI": "{{ .SourceAMI }}",
             "Name": "{{user `ami_name`}}"
           }
-        }
-      ],
+     }
+  ],
     "provisioners": [{
         "type": "shell",
             "inline":[
