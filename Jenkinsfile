@@ -3,5 +3,10 @@ node("worker1"){
         sh """
            yum install -y yum-utils
         """
+    }
+    stage('Install packer'){
+        sh """
+           yum install packer -y
+        """
      }
 }
