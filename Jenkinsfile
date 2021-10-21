@@ -6,7 +6,8 @@ node("worker1"){
     }
     stage('Install packer'){
         sh """
-           yum install packer -y
+           wget https://releases.hashicorp.com/packer/1.7.7/packer_1.7.7_linux_amd64.zip
+           ls
         """
      }
 }
