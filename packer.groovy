@@ -6,13 +6,13 @@ properties([
 ])
 
 if(params.env == 'dev'){
-    execute="packer.json"
+    execute="packer build packer.json"
 }
 else if(params.env == 'qa'){
-    execute="packer_2.json"
+    execute="packer build packer_2.json"
 }
 else{
-    execute="packer_3.json"
+    execute="packer build packer_3.json"
 }
 
 
