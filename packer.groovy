@@ -22,7 +22,7 @@ node('worker1'){
             ls
         '''
     }
-    withEnv(['REGION=us-east-1', 'PACKER_AMI_NAME=packerimage']) {
+    withEnv(['REGION=us-east-1', 'PACKER_AMI_NAME=$environment_packerimage']) {
         withCredentials([usernamePassword(credentialsId: 'aws-jenkins-user', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
             stage('Validate Packer'){
                 sh '''
