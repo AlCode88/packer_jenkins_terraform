@@ -1,10 +1,4 @@
 {
-    "variables": {
-        "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
-        "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
-        "ami_name": "{{env `PACKER_AMI_NAME`}}"
-    },
-
     "builders": [
         {
             "type": "amazon-ebs",
@@ -23,14 +17,14 @@
             },
             "instance_type": "t2.micro",
             "ssh_username": "ubuntu",
-            "ami_name": "ubuntu-dev"
+            "ami_name": "ubuntu-ami-prod"
         }
-    
     ],
+    
     "provisioners": [{
           "type": "shell",
               "inline":[
                   "sudo apt install -y apache2"
               ]
-    }]
-}
+      }]
+  }

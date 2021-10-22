@@ -1,8 +1,27 @@
+properties([
+    parameters([
+        choice(choices: ['dev', 'test', 'prod'], description: 'Select environment to apply', name: 'env'), 
+        booleanParam(defaultValue: true, description: 'Checkmark to apply or uncheck will destroy', name: 'checkmark')
+    ])
+])
+
+if(params.env == 'dev'){
+    execute="packer.json"
+
+else if(params.env == 'qa'){
+    execute="packer_2.json"
+}
+
+else{
+    execute="packer_3.json"
+}
+}
+
 node('worker1'){
     stage('Install Apache'){
         sh '''
-            ls
             git pull -u origin main
+            ls
         '''
     }
     withEnv(['REGION=us-east-1', 'PACKER_AMI_NAME=packerimage']) {
@@ -14,7 +33,7 @@ node('worker1'){
             }
             stage('Pcker Build'){
                 sh '''
-                    packer build packer.json
+                    packer build $execution
                 '''
             }
         }
