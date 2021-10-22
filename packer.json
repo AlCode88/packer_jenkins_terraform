@@ -17,9 +17,7 @@
               "name": "ami-02e136e904f3da870",
               "root-device-type": "instance"
             },
-            "owners": [
-              "799700054245"
-            ],
+            "owners": ["799700054245"],
             "most_recent": true
           },
         "ssh_username": "ec2-user",
