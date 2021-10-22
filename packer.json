@@ -15,7 +15,7 @@
             "filters": {
               "virtualization-type": "hvm",
               "name": "ami-02e136e904f3da870",
-              "root-device-type": "ebs"
+              "root-device-type": "instance"
             },
             "owners": [
               "799700054245"
