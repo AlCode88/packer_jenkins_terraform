@@ -32,7 +32,7 @@ node('worker1'){
             //}
             stage('Pcker Build'){
                 sh '''
-                $execution
+                $execute
                 '''
             }
         }
