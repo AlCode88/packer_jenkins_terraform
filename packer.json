@@ -14,7 +14,7 @@
         "source_ami_filter": {
             "filters": {
               "virtualization-type": "hvm",
-              "name": "ami-02e136e904f3da870 (64-bit x86) / ami-0e341fcaad89c3650",
+              "name": "ami-02e136e904f3da870",
               "root-device-type": "ebs"
             },
             "owners": [
