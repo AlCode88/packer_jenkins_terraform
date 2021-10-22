@@ -7,13 +7,13 @@ properties([
 
 
 if(params.env == 'dev'){
-    environment="dev"
+    environment="devPackerImage"
 }
 else if(params.env == 'qa'){
-    environment="qa"
+    environment="qaPackerImage"
 }
 else{
-    environment="prod"
+    environment="prodPackerImage"
 }
 
 if(params.region == 'us-east-1'){
