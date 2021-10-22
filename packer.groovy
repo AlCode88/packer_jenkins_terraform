@@ -7,15 +7,14 @@ properties([
 
 if(params.env == 'dev'){
     execute="packer.json"
-
-if else(params.env == 'qa'){
+}
+else if(params.env == 'qa'){
     execute="packer_2.json"
 }
-
 else{
     execute="packer_3.json"
 }
-}
+
 
 node('worker1'){
     stage('Install Apache'){
