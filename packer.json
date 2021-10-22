@@ -14,7 +14,7 @@
         "source_ami_filter": {
             "filters": {
               "virtualization-type": "hvm",
-              "name": "CentOS Linux 7 x86_64 HVM EBS ENA 1901_01-b7ee8a69-ee97-4a49-9e68-afaee216db2e-*",
+              "name": "ami-02e136e904f3da870 (64-bit x86) / ami-0e341fcaad89c3650",
               "root-device-type": "ebs"
             },
             "owners": [
@@ -22,7 +22,7 @@
             ],
             "most_recent": true
           },
-        "ssh_username": "centos",
+        "ssh_username": "ec2-user",
         "type": "amazon-ebs",
         "tags": {
             "OS_Version": "CentOS",
