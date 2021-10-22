@@ -1,18 +1,17 @@
 properties([
     parameters([
         choice(choices: ['dev', 'qa', 'prod'], description: 'Select environment to apply', name: 'env'), 
-        booleanParam(defaultValue: true, description: 'Checkmark to apply or uncheck will destroy', name: 'checkmark')
     ])
 ])
 
 if(params.env == 'dev'){
-    execute="packer build packer.json"
+    execute="packer.json"
 }
 else if(params.env == 'qa'){
-    execute="packer build packer_2.json"
+    execute="packer_2.json"
 }
 else{
-    execute="packer build packer_3.json"
+    execute="packer_3.json"
 }
 
 
@@ -32,7 +31,7 @@ node('worker1'){
             //}
             stage('Pcker Build'){
                 sh '''
-                $execution
+                packer build $execute
                 '''
             }
         }
