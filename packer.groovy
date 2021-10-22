@@ -1,6 +1,6 @@
 properties([
     parameters([
-        choice(choices: ['dev', 'test', 'prod'], description: 'Select environment to apply', name: 'env'), 
+        choice(choices: ['dev', 'qa', 'prod'], description: 'Select environment to apply', name: 'env'), 
         booleanParam(defaultValue: true, description: 'Checkmark to apply or uncheck will destroy', name: 'checkmark')
     ])
 ])
