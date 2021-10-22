@@ -5,13 +5,13 @@ properties([
 ])
 
 if(params.env == 'dev'){
-    execute="packer.json"
+    environment="dev"
 }
 else if(params.env == 'qa'){
-    execute="packer_2.json"
+    environment="qa"
 }
 else{
-    execute="packer_3.json"
+    environment="prod"
 }
 
 
@@ -22,16 +22,16 @@ node('worker1'){
             ls
         '''
     }
-    withEnv(['REGION=us-east-1', 'PACKER_AMI_NAME=packerimage']) {
+    withEnv(['REGION=us-east-1', 'PACKER_AMI_NAME=${environment}-packerimage']) {
         withCredentials([usernamePassword(credentialsId: 'aws-jenkins-user', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
-            //stage('Validate Packer'){
-            //    sh '''
-            //        packer validate $execute
-            //    '''
-            //}
-            stage('Pcker Build'){
+            stage('Validate Packer'){
                 sh '''
-                packer build $execute
+                  packer validate packer.groovy
+                '''
+            }
+            stage('Packer Build'){
+                sh '''
+                  packer build packer.groovy
                 '''
             }
         }
