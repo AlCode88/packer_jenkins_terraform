@@ -8,7 +8,7 @@ properties([
 if(params.env == 'dev'){
     execute="packer.json"
 
-else if(params.env == 'qa'){
+if else(params.env == 'qa'){
     execute="packer_2.json"
 }
 
