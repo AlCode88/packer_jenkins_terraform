@@ -1,15 +1,9 @@
 {
-    "variables": {
-        "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
-        "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
-        "ami_name": "{{env `PACKER_AMI_NAME`}}"
-    },
-
     "builders": [
         {
             "type": "amazon-ebs",
-            "access_key": "{{env `aws_access_key`}}",
-            "secret_key": "{{env `aws_secret_key`}}",
+            "access_key": "{{user `aws_access_key`}}",
+            "secret_key": "{{user `aws_secret_key`}}",
             "region": "us-east-1",
             "subnet_id": "{{user `aws_subnet_id`}}",
             "source_ami_filter": {
@@ -25,12 +19,12 @@
             "ssh_username": "ubuntu",
             "ami_name": "ubuntu-ami-test_{{timestamp}}"
         }
-    
     ],
+    
     "provisioners": [{
           "type": "shell",
               "inline":[
                   "sudo apt install -y apache2"
               ]
-    }]
-}
+      }]
+  }
