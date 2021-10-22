@@ -23,7 +23,7 @@
             },
             "instance_type": "t2.micro",
             "ssh_username": "ubuntu",
-            "ami_name": "ubuntu-dev"
+            "ami_name": "{{user `ami_name`}}"
         }
     
     ],
