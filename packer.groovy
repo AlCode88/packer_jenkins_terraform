@@ -4,6 +4,7 @@ properties([
     ])
 ])
 
+environment=$params.env 
 if(params.env == 'dev'){
     environment="dev"
 }
@@ -14,6 +15,7 @@ else{
     environment="prod"
 }
 
+#image_name=$params.env-packer-{timestamp}
 
 node('worker1'){
     stage('Install Apache'){
@@ -22,7 +24,7 @@ node('worker1'){
             ls
         '''
     }
-    withEnv(['REGION=us-east-1', 'PACKER_AMI_NAME=$environment_packerimage']) {
+    withEnv(["REGION=us-east-1", "PACKER_AMI_NAME=$environment"]) {
         withCredentials([usernamePassword(credentialsId: 'aws-jenkins-user', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
             stage('Validate Packer'){
                 sh '''
