@@ -23,7 +23,12 @@
             },
             "instance_type": "t2.micro",
             "ssh_username": "ubuntu",
-            "ami_name": "{{user `ami_name`}}"
+            "tags": {
+              "OS_Version": "CentOS",
+              "Release": "Latest",
+              "Base_AMI": "{{ .SourceAMI }}",
+              "Name": "{{user `ami_name`}}"
+            }
         }
     
     ],

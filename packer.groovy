@@ -4,7 +4,7 @@ properties([
     ])
 ])
 
-environment=$params.env 
+
 if(params.env == 'dev'){
     environment="dev"
 }
