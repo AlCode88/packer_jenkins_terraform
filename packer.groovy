@@ -27,7 +27,7 @@ node('worker1'){
         withCredentials([usernamePassword(credentialsId: 'aws-jenkins-user', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
             stage('Validate Packer'){
                 sh '''
-                    packer validate $execution
+                    packer validate $execute
                 '''
             }
             stage('Pcker Build'){
