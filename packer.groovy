@@ -43,4 +43,5 @@ node('worker1'){
             string(name: 'env', value: "$params.env"), 
             booleanParam(name: 'checkmark', value: true)
         ]
+    }
 }
