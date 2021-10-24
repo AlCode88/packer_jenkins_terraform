@@ -38,4 +38,9 @@ node('worker1'){
             }
         }
     }
+    stage('Create Instance'){
+        build job: 'terrafrom-ec2', parameters: [
+            string(name: 'env', value: "$params.env"), 
+            booleanParam(name: 'checkmark', value: true)
+        ]
 }
